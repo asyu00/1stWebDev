@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>First Web Development</title>
+	<link rel="icon" type="image/x-icon "href="Images/favicon.ico">
+	<link rel="stylesheet" type="text/css" href="Styles/main.css">
+</head>
+<body>
+	<div class="container" id="cont1">
+		<h1 id="toggle">My random item picker</h1>
+		<p>type '<strong>,</strong>' after entering each values. Eg. dog, cat  </p>
+		<label>
+		<p>Items to pick from</p>
+		<textarea name="items" id="items"></textarea>
+		</label><br>
+		<input type="button" value="Pick random item!" onclick="random();" />
+		<h3>Result: </h3>
+		<div class="d1" id="result">Randomly picked item will be shown here!</div>
+	</div>
+	<div class="container" id="cont2">
+		<h1 class="dice" id="toggle2">Dice</h1>
+		<p  class="num">Enter the number of sides the die has</p>
+		<input type="text" id="number"  onfocus="this.value=''" />
+		<input type="button" value="Roll Dice!" onclick="die();" />
+		<h3 class="dresult">Result: </h3>
+		<div class="d1" id="roll">Number rolled will be shown here!</div>
+	</div>
+	<div class="container bottom" id="cont3">
+		<h1 class="h1Btm">Get a "yes/no" answer</h1>
+		<label>
+		<p>Ask your question</p>
+		<textarea name="items" id="qns"></textarea>
+		</label><br>
+		<input type="button" value="Get Answer!" onclick="yesno();" />
+		<h3 class="ynResult">Result: </h3>
+		<div class="d1" id="qres">QNS: ANS</div>
+	</div>
+	<div class="container" id = "cont4">
+		<h1>Janken</h1>
+		<div class="scoreboard">
+			<div id="user" class="badges">user</div>
+			<div id="comp" class="badges">comp</div>
+			<span id="user-score">0</span>:<span id="comp-score">0</span>
+		</div>
+		<div class="jankenres"> </div>
+		<div class="choices">
+			<div class="choice" id="r">
+				<img src="Images/guu.png" alt="">
+			</div>
+			<div class="choice" id="s">
+				<img src="Images/choki.png" alt="">
+			</div>
+			<div class="choice" id="p">
+				<img src="Images/paa.png" alt="">
+			</div>
+		</div>
+		<p class="name">Make a move</p>
+		<input type="button" name="rset" value="Reset" onclick="reset();">
+	</div>
+	<div class="container">
+		<h1>HangMan</h1>
+		<p>Set your word</p>
+		<p class="error"></p>
+		<input type="text" id="HM">
+		<input type="button" onclick="hangMan();" value="Set word!" id="setBtn">
+		<p class="settedword"></p>
+		<input type="text" class="guess" value="Guess a letter or word!" onfocus="this.value = ''">
+		<input type="button" onclick="guess();" value="Guess!" class="guess">
+		<p class="aaa"><p>
+
+
+	</div>
+	<script src="jScript.js"></script>
+	<script src="jquery/jquery.js"></script>
+	<script>
+		var wordData = '';
+		var lengthData = '';
+		var wordData2 = '';
+		function hangMan(){
+			var word = document.getElementById('HM').value;
+			document.querySelector('#HM').value = '';
+			var setBtn = document.getElementById('setBtn');
+			setBtn.disabled = true;
+			word = word.trim();
+			params = word.split(" ");
+			if(!params[1]){
+				for(var i = 0;i < word.length;i++){
+					lengthData += '_ ';
+					document.querySelector('.settedword').innerHTML = lengthData;
+				}
+				wordData = word;
+				wordData2 = wordData;
+			}
+			else{
+				document.querySelector('.error').innerHTML = 'You can only set 1 word!';
+				setBtn.disabled = false;
+			}
+			return wordData, lengthData, wordData2;
+		}
+		function guess(){
+			var guessChar = document.querySelector('.guess').value;
+			for(var j = 0;j < wordData.length;j++){
+				//if 1 character only
+				if(!guessChar[1] && wordData2){
+					if(guessChar.toUpperCase() === wordData2[j].toUpperCase()){
+						wordData2 = wordData2.replace(guessChar, '');
+						lengthData = 
+						document.querySelector('.aaa').innerHTML = '';
+						if(!wordData2){
+							document.querySelector('.aaa').innerHTML = 'Congratulations! You found the word!';
+							setBtn.disabled = false;
+							wordData = '';
+						}
+						console.log(wordData2);
+						break;
+					}
+					else
+						document.querySelector('.aaa').innerHTML = 'try again!';
+				}
+				else{
+					if(guessChar.toUpperCase() === wordData.toUpperCase()){
+
+						document.querySelector('.aaa').innerHTML = 'Congratulations! You found the word!';
+						setBtn.disabled = false;
+						document.querySelector('.settedword').innerHTML = guessChar;
+						wordData = '';
+						//document.querySelector('.guess').style.visibility = 'hidden';
+
+					}else
+						document.querySelector('.aaa').innerHTML = 'try again!';
+				}
+			}
+		}
+	</script>
+	<script type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+body{
+	background: pink;
+	font-family: arial;
+}
+
+h1{
+	color: red;
+	display: inline-block;
+}
+
+label{
+	font-family: cursive;
+}
+
+textarea{
+	font-family: arial;
+	resize: none;
+	width: 99%;
+}
+
+.h1Btm{
+	padding: 0 0 45px 0;
+}
+
+.d1{
+	background: grey;
+	color: white;
+	padding: 10px;
+	margin: 2px;
+	width: 95%;
+	border-style: groove;
+	float: left;
+}
+
+.container{
+	text-align: center;
+	background: pink;
+	padding: 10px;
+	margin: 2px;
+	width: 47.5%;
+	border-style: groove;
+	float: left;
+	border-radius: 10px;
+}
+
+.dresult{
+	padding: 45px 0 0 0;
+}
+
+.ynResult{
+	padding: 75px 0 0 0;
+}
+
+.num{
+	font-family: cursive;
+	padding: 30px 0 0 0;
+}
+
+.choices{
+	text-align: center;
+}
+
+.choice{
+	display: inline-block;
+	margin: 20px 20px 0 20px;
+}
+
+.choice:hover{
+	cursor: pointer;
+}
+
+.scoreboard{
+	margin: 20px auto;
+	text-align: center;
+	border: 3px groove gold;
+	width: 200px;
+	font-size: 46px;
+	position: relative;
+}
+
+.badges{
+	background: gold;
+	color: black;
+	font-size: 22px;
+}
+
+.jankenres{
+	height: 30px;
+	border: groove;
+	background: grey;
+	font-size: 25px;
+	color: white;
+}
+
+.guess{
+	//visibility: hidden;
+}
+
+#user{
+	position: absolute;
+	top:15px;
+	left:-25px;
+}
+
+#comp{
+	position: absolute;
+	top:15px;
+	right: -25px;
+}
