@@ -7,3 +7,7 @@
   - pick random item from a list/array
   - rolling a dice with user defined sides
   - hangman (not done)
+
+
+### Website DEMO with working hangman
+  https://dylanchua.tk/janken/
