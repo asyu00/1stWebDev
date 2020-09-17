@@ -10,4 +10,5 @@
 
 
 ### Website DEMO with working hangman
-  https://dylanchua.tk/janken/
+  https://dylanchua.ga/janken/
+  https://dylanchua.ml/janken/
